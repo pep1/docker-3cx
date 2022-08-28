@@ -1,12 +1,4 @@
 FROM debian:buster
-  
-ARG BUILD_STRING
-ARG BUILD_DATE
-ARG BUILD_TIME
-
-LABEL build.string $BUILD_STRING
-LABEL build.date   $BUILD_DATE
-LABEL build.time   $BUILD_TIME
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG en_US.UTF-8
