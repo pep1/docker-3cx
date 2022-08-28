@@ -1,8 +1,8 @@
 #!/bin/bash
 
-VERSION=16.0.7.1078
-USER=farfui
-HOSTNAME=pbx.yourdomain.com
+VERSION=18.0.3.450
+USER=pep1
+HOSTNAME=192.167.0.112
 
 docker run \
         -d \
@@ -12,10 +12,5 @@ docker run \
         --memory-swap 2g \
         --network host \
         --restart unless-stopped \
-        -v /sys/fs/cgroup:/sys/fs/cgroup:ro \
-        -v 3cx_backup:/srv/backup \
-        -v 3cx_recordings:/srv/recordings \
-        -v 3cx_log:/var/log \
-        --cap-add SYS_ADMIN \
-        --cap-add NET_ADMIN \
+        --privileged \
         ${USER}/3cx:${VERSION}

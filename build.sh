@@ -1,13 +1,14 @@
 #!/bin/bash
   
-VERSION=18.0.0.1880
-USER=farfui
+VERSION=18.0.3.450
+USER=pep1
 
 docker rmi ${USER}/3cx:${VERSION}
+docker rm 3cx_stage1_c
+docker rmi 3cx_stage1
 
 docker build \
         --force-rm \
-        --no-cache \
         --build-arg BUILD_STRING="$(date -u)" \
         --build-arg BUILD_DATE="$(date +%d-%m-%Y)" \
         --build-arg BUILD_TIME="$(date +%H:%M:%S)" \
